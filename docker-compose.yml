@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app1:
+    container_name: app1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT1}:${PORT1}"
+    environment:
+      INSTANCE_ID: 1
+      PORT: ${PORT1}
+      FILES_PATH: ${FILES_PATH}
+  app2:
+    container_name: app2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT2}:${PORT2}"
+    environment:
+      INSTANCE_ID: 2
+      PORT: ${PORT2}
+      FILES_PATH: ${FILES_PATH}
+  app3:
+    container_name: app3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT3}:${PORT3}"
+    environment:
+      INSTANCE_ID: 3
+      PORT: ${PORT3}
+      FILES_PATH: ${FILES_PATH}
+
